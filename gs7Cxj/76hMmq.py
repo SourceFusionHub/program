@@ -1,4 +1,10 @@
-def matrix_multiply(matrix1, matrix2):
+def matrix_multiply(matrix1, matrix2) -> list:
+    """
+    matrix1: (list): first matrix 
+    matrix2: (list): second matrix 
+
+    returns: (list): Multiplied Matrix
+    """
     if len(matrix1[0]) != len(matrix2):
         raise ValueError("Matrix dimensions are not compatible for multiplication")
 
