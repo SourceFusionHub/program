@@ -1,0 +1,25 @@
+{
+    "name": "yuzuru-s/redis-recommend",
+    "description": "Wrapping Redis's sorted set APIs for specializing recommending operations.",
+    "keywords": ["redis", "recommend", "sorted set", "jaccard", "collaborative filtering", "machine learning"],
+    "homepage": "https://github.com/YuzuruS/redis-recommend",
+    "type": "library",
+    "license": "MIT",
+    "require" : {
+        "php": ">=5.5.0"
+    },
+    "authors": [
+    {
+        "name": "Yuzuru Suzuki",
+        "email": "navitima@gmail.com",
+        "homepage": "http://yuzurus.hatenablog.jp/"
+    }
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "3.7.*@stable",
+        "satooshi/php-coveralls": "dev-master"
+    },
+    "autoload": {
+        "psr-0": {"YuzuruS": "src/"}
+    }
+}
