@@ -1,30 +1,32 @@
-import * as readline from "readline";
+import { stdin as input, stdout as output } from "process";
 
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout,
-});
-
-function isPerfect(num: number): boolean {
+function getSumOfFactors(num: number): number {
   let sum = 0;
 
-  for (let i = 1; i <= num / 2; i++) {
+  for (let i = 1; i <= Math.sqrt(num); i++) {
     if (num % i === 0) {
-      sum += i;
+      sum += i + num / i;
     }
   }
 
-  return sum === num;
+  return sum - num;
 }
 
-rl.question("Enter a number: ", (num) => {
-  const n = parseInt(num);
+function isPerfect(num: number): boolean {
+  return getSumOfFactors(num) === num;
+}
 
-  if (isPerfect(n)) {
-    console.log(n + " is a perfect number");
-  } else {
-    console.log(n + " is not a perfect number");
-  }
+function main() {
+  output.write("Enter a number: ");
 
-  rl.close();
-});
+  input.on("data", (data) => {
+    const num = Number(data);
+    const isPerfectNum = isPerfect(num);
+
+    output.write(`${num} is ${isPerfectNum ? "" : "not "}a perfect number\n`);
+
+    input.pause();
+  });
+}
+
+main();
