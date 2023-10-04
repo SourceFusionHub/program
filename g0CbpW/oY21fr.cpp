@@ -1,29 +1,35 @@
-#include<stdio.h>
-int main(){
-   int n,i;
-   int fact,rem;
-   printf("
-Enter a number : ");
-   scanf("%d",&n);
-   printf("
-");
-   int sum = 0;
-   int temp = n;
-   while(n){
-      i = 1,fact = 1;
-      rem = n % 10;
-      while(i <= rem){
-         fact = fact * i;
-         i++;
-      }
-      sum = sum + fact;
-      n = n / 10;
-   }
-   if(sum == temp)
-      printf("%d is a strong number
-",temp);
-   else
-      printf("%d is not a strong number
-",temp);
-   return 0;
+#include <stdio.h>
+
+int isPowerful(int n) {
+    int i, j;
+    for (i = 2; i * i <= n; i++) {
+        if (n % i == 0) {
+            int count = 0;
+            while (n % i == 0) {
+                n /= i;
+                count++;
+            }
+            if (count % 2 != 0) {
+                return 0; // Not a powerful number
+            }
+        }
+    }
+    if (n > 1) {
+        return 0; // If there's a prime factor left, it's not powerful
+    }
+    return 1; // It's a powerful number
+}
+
+int main() {
+    int n;
+    printf("Enter a number: ");
+    scanf("%d", &n);
+
+    if (isPowerful(n)) {
+        printf("%d is a powerful number\n", n);
+    } else {
+        printf("%d is not a powerful number\n", n);
+    }
+
+    return 0;
 }
