@@ -16,12 +16,3 @@ fi
 echo "File/Directory Path | Permissions"
 
 find "$directory_path" -exec stat -c "%n | %A" {} \;
-
-
-
-
-
-
-
-bash
-./generate_permissions_report.sh /path/to/your/directory
