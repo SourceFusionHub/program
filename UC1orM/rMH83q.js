@@ -65,9 +65,3 @@ nodes[2].vote(nodes[0].proposal, true);
 nodes[0].aggregateVotes(nodes[0].proposal);
 
 console.log(nodes[0].ledger); // Check the ledger of node 0
-
-
-//################ Sources ################
-
-// ********* github.com/hillasen/HIL_Coin ********
-// ******** github.com/Buscompany21/BusquitoCoin ********
