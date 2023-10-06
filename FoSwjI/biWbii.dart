@@ -1,18 +1,3 @@
-//Create a new Flutter app:
-
-flutter create gps_location_app
-cd gps_location_app
-
-//Open the pubspec.yaml file and add the following dependency for location services and maps
-
-dependencies:
-  flutter:
-    sdk: flutter
-  location: ^4.3.0
-  google_maps_flutter: ^2.0.5
-
-//Dart code
-
 import 'package:flutter/material.dart';
 import 'package:location/location.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -99,7 +84,3 @@ class _MyAppState extends State<MyApp> {
     );
   }
 }
-
-//Run the Code
-
-flutter run
